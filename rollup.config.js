@@ -11,11 +11,12 @@ import dts from 'rollup-plugin-dts';
 
 export default defineConfig([
   ...[
-    ['index', ['./globalThis', './websocket']],
+    ['index', ['./globalThis/index.js', './websocket.js']],
+    ['websocket', ['./websocket-constructor/index.js']],
     ['globalThis/index', []],
     ['globalThis/browser', []],
-    ['websocket/index', ['ws']],
-    ['websocket/browser', ['../globalThis/browser']],
+    ['websocket-constructor/index', ['ws']],
+    ['websocket-constructor/browser', ['../globalThis/index.js']],
   ].reduce(
     (prev, [name, external]) =>
       prev
@@ -23,12 +24,12 @@ export default defineConfig([
           input: `src/${name}.ts`,
           output: [
             {
-              file: `dist/${name}.cjs`,
+              file: `dist/cjs/${name}.js`,
               format: 'cjs',
               sourcemap: true,
             },
             {
-              file: `dist/${name}.js`,
+              file: `dist/esm/${name}.js`,
               format: 'esm',
               sourcemap: true,
             },
@@ -47,7 +48,7 @@ export default defineConfig([
           input: `src/${name}.ts`,
           output: {
             format: 'esm',
-            file: `dist/${name}.d.ts`,
+            file: `dist/esm/${name}.d.ts`,
           },
           plugins: [dts()],
           external,

@@ -1,6 +1,6 @@
 {
   "name": "@wmslei78/cross-platform-websocket",
-  "version": "0.1.0",
+  "version": "0.1.8",
   "description": "Cross Platform Websocket",
   "author": "Sun Lei",
   "contributors": [
@@ -8,25 +8,25 @@
   ],
   "license": "MIT",
   "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
     }
   },
   "browser": {
-    "./dist/globalThis/index.js": "./dist/globalThis/browser.js",
-    "./dist/websocket/index.js": "./dist/websocket/browser.js",
-    "./dist/globalThis/index.cjs": "./dist/globalThis/browser.cjs",
-    "./dist/websocket/index.cjs": "./dist/websocket/browser.cjs"
+    "./dist/esm/globalThis/index.js": "./dist/esm/globalThis/browser.js",
+    "./dist/esm/websocket-constructor/index.js": "./dist/esm/websocket-constructor/browser.js",
+    "./dist/cjs/globalThis/index.js": "./dist/cjs/globalThis/browser.js",
+    "./dist/cjs/websocket-constructor/index.js": "./dist/cjs/websocket-constructor/browser.js"
   },
-  "homepage": "",
+  "homepage": "https://github.com/wmslei/cross-platform-websocket",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/wmslei/cross-platform-websocket.git"
   },
   "keywords": [
     "websocket",
@@ -76,9 +76,6 @@
     "src/**/*.{js,ts,md,json}": "prettier --write --ignore-unknown --config ./.prettierrc"
   },
   "files": [
-    "package.json",
-    "README.md",
-    "LICENSE",
     "dist"
   ]
 }

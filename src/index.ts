@@ -1,2 +1,2 @@
-export * from './globalThis';
-export * from './websocket';
+export * from './globalThis/index.js';
+export * from './websocket.js';

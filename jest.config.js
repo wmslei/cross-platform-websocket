@@ -3,5 +3,6 @@
 export default {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  modulePathIgnorePatterns: ['dist'],
+  modulePaths: ['<rootDir>/src'],
+  modulePathIgnorePatterns: ['<rootDir>/dist'],
 };

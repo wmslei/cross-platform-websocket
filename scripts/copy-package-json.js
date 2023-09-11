@@ -10,6 +10,7 @@ function copy() {
     author: pkg.author,
     contributors: pkg.contributors,
     license: pkg.license,
+    type: 'module',
     main: 'index.js',
     types: 'index.d.ts',
     exports: {
@@ -17,7 +18,6 @@ function copy() {
       import: './index.js',
       require: './index.cjs',
     },
-    type: 'module',
     homepage: pkg.homepage,
     repository: pkg.repository,
     keywords: pkg.keywords,
