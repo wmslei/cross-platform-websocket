@@ -11,7 +11,7 @@ import dts from 'rollup-plugin-dts';
 
 export default defineConfig([
   ...[
-    ['index', ['./globalThis/index.js', './websocket.js']],
+    ['index', ['./websocket.js']],
     ['websocket', ['./websocket-constructor/index.js']],
     ['globalThis/index', []],
     ['globalThis/browser', []],
